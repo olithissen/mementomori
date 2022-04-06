@@ -21,4 +21,4 @@ const data = {
 
 ## Run
 
-Deploy it to a HTTP server or run it in your deve environment.
+Deploy it to a HTTP server or run it in your dev environment.
