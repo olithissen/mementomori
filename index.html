@@ -27,18 +27,74 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="stylesheet" href="css/styles.css?v=1.0" />
+    <link rel="stylesheet" href="css/w3.css?v=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.11.0/dayjs.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.11.0/plugin/isoWeek.js"></script>
     <script src="https://unpkg.com/dayjs@1.11.0/plugin/isSameOrBefore.js"></script>
     <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/app.js"></script>
   </head>
 
   <body>
-    <section>
-      <article id="cal" />
+    <nav
+      class="w3-sidebar w3-bar-block w3-card w3-collapse"
+      style="width: 360px"
+      id="mySidebar"
+    >
+      <button class="w3-bar-item w3-button w3-hide-large" onclick="w3_close()">
+        Close &times;
+      </button>
+      <form class="w3-container">
+        <p>
+          <label>Your date of birth</label>
+          <input
+            class="w3-input w3-border w3-light-grey"
+            type="date"
+            value="1980-01-01"
+            id="input_dob"
+          />
+        </p>
+        <p>
+          <label>How many years to show</label>
+          <input
+            class="w3-input w3-border w3-light-grey"
+            type="number"
+            max="100"
+            min="1"
+            value="85"
+            id="input_years"
+          />
+        </p>
+        <p>
+          <a class="w3-btn w3-blue-grey" id="load">Load</a>
+          <a class="w3-btn w3-blue-grey" id="save">Save</a>
+          <a class="w3-btn w3-blue-grey" id="refresh">Refresh</a>
+        </p>
+      </form>
+    </nav>
+
+    <section class="w3-main" style="margin-left: 360px" id="main">
+      <article>
+        <section class="w3-blue-grey">
+          <div class="w3-container">
+            <h1>Memento mori</h1>
+          </div>
+        </section>
+        <section class="w3-container w3-padding">
+          <div id="cal" />
+        </section>
+      </article>
     </section>
 
-    <script type="module" src="js/app.js"></script>
+    <script>
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+      }
+    </script>
   </body>
 </html>
