@@ -1,0 +1,35 @@
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  counter-reset: line var(--line-num, -1);
+}
+
+.year {
+  counter-increment: line;
+}
+
+.year {
+  line-height: 0.8em;
+  color: darkgray;
+}
+
+.currentWeek {
+  color: yellowgreen;
+}
+
+.year::before {
+  font-size: small;
+  content: counter(line) " ";
+  width: 2em;
+  padding-right: 0.5em;
+  display: block;
+  float: left;
+  text-align: right;
+}
+
+.year:not(:nth-of-type(5n + 1)):before {
+  content: counter(line) " ";
+  visibility: hidden;
+}
